@@ -25,6 +25,9 @@ export const getCoursesDb = async (): Promise<CourseInterface[]> => {
 export const addCourseDb = async (
   courseFields: Omit<CourseInterface, 'id' | 'groups'>,
 ): Promise<CourseInterface> => {
+  if (!AppDataSource.isInitialized) {
+    await AppDataSource.initialize();
+  }
   const course = new Course();
   const newCourse = await courseRepository().save({
     ...course,

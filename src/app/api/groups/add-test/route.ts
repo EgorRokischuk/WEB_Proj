@@ -1,30 +1,36 @@
 import type GroupInterface from '@/types/GroupInterface';
 import { groupService } from '@/services/GroupService';
+import { dbInit } from '@/db/AppDataSource';
 
 const defaultGroups: GroupInterface[] = [
   {
     id: 1,
     name: 'Group-1',
     contacts: 'group1@test.test',
+    courseId: 1,
   },
   {
     id: 2,
     name: 'Group-2',
     contacts: 'group2@test.test',
+    courseId: 1,
   },
   {
     id: 3,
     name: 'Group-3',
     contacts: 'group3@test.test',
+    courseId: 1,
   },
   {
     id: 4,
     name: 'Group-4',
     contacts: 'group4@test.test',
+    courseId: 1,
   },
 ];
 
 export async function GET(): Promise<Response> {
+  await dbInit();
   const newGroups: GroupInterface[] = [];
   const existGroups: GroupInterface[] = [];
 

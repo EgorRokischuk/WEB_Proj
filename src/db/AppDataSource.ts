@@ -1,5 +1,6 @@
 import 'reflect-metadata';
-import { DataSource, type DataSourceOptions } from 'typeorm';import { Group } from './entity/Group.entity';
+import { DataSource, type DataSourceOptions } from 'typeorm';
+import { Group } from './entity/Group.entity';
 import { Student } from './entity/Student.entity';
 import { User } from './entity/User.entity';
 import { Course } from './entity/Course.entity';
