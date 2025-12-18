@@ -31,7 +31,7 @@ export class UserService {
     if (!user) {
       return null;
     }
-    
+
     const isValid = verifyPassword(password, user.password);
 
     if (!isValid) {
